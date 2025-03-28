@@ -1,0 +1,18 @@
+{
+    "name": "Edpuzzle speed adjuster",
+    "version": "1.0.0",
+    "description": "Allows you set the speed of edpuzzle videos as whatever you would like",
+    "manifest_version": 3,
+    "author": "Jake Nichols",
+    "permissions": ["storage","activeTab","declarativeContent"],
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Edpuzzle speed adjuster"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.edpuzzle.com/assignments/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
