@@ -11,3 +11,5 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
         setSpeed(data.speed);
     });
 });
+
+console.log("I like kids!")
