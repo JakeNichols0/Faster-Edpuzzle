@@ -1,0 +1,38 @@
+html {
+    width: 200px;
+    background-color: #efe4d1;
+}
+
+h1, p {
+    text-align: center;
+    font-style: normal;
+    color: #20201e;
+}
+
+h1 {
+    font-family: 'carlmarx';
+    font-weight: 900;
+    margin: 0.375em 0em 0.125em;
+}
+
+p {
+    width: 100%;
+    font-family: "joschmi", sans-serif;
+    font-size: 3em;
+    font-weight: 400;
+    text-decoration: underline #ef634a;
+    margin: 0.125em 0em 0.25em;
+}
+
+.andrewRobson {
+    /*-webkit-appearance: none;
+    appearance: none;*/
+    background: #d3d3d3;
+    width: 100%;
+}
+
+/*.andrewRobson::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ef634a;
+}*/
