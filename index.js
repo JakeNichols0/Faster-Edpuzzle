@@ -1,19 +1,37 @@
 let slide = document.getElementById('slide')
 let label = document.getElementById('speed');
-let set = document.getElementById('set');
+let frame = document.getElementById('frame');
+let type = document.getElementById('type');
 
-slide.addEventListener("input", changeSpeed);
+function setFrame() {
+    if(frame.value) {
+        browser.storage.sync.set({ frame: [{ frame: frame.value, type: type.innerText }] }).then(() => {
+            console.log("Frame has been changed to " + frame.value);
+        });
+    }
+}
 
-set.addEventListener("click", changeSpeed);
+frame.addEventListener("change", setFrame);
 
-chrome.storage.sync.get("speed").then((data) => {
-    slide.value = data.speed;
-    label.innerHTML = data.speed;
+type.addEventListener("click", () => {
+    if(type.innerText == "Id") {
+        type.innerText = "Indx";
+        frame.placeholder = "Frame Indx";
+    } else {
+        type.innerText = "Id";
+        frame.placeholder = "Frame Id";
+    }
+    setFrame();
 });
 
-function changeSpeed() {
-    chrome.storage.sync.set({ speed: slide.value }).then(() => {
+slide.addEventListener("input", () => {
+    browser.storage.sync.set({ speed: slide.value }).then(() => {
         console.log("Speed has been changed to " + slide.value);
     });
     label.innerHTML = slide.value;
-}
+});
+
+browser.storage.sync.get("speed").then((data) => {
+    slide.value = data.speed;
+    label.innerHTML = data.speed;
+});

@@ -3,6 +3,10 @@ html {
     background-color: #efe4d1;
 }
 
+body {
+    font-family: 'carlmarx';
+}
+
 h1, p {
     text-align: center;
     font-style: normal;
@@ -10,7 +14,6 @@ h1, p {
 }
 
 h1 {
-    font-family: 'carlmarx';
     font-weight: 900;
     margin: 0.375em 0em 0.125em;
 }
@@ -24,15 +27,35 @@ p {
     margin: 0.125em 0em 0.25em;
 }
 
-.andrewRobson {
-    /*-webkit-appearance: none;
-    appearance: none;*/
-    background: #d3d3d3;
+.text {
+    font-family: 'carlmarx';
     width: 100%;
 }
 
-/*.andrewRobson::-webkit-slider-runnable-track {
+.slide {
     -webkit-appearance: none;
     appearance: none;
-    background-color: #ef634a;
-}*/
+    background: #dfcaa4;
+    width: 100%;
+    height: .75em;
+    border-radius: .5em;
+    outline: none;
+    margin: .5em 0px;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slide:hover {
+    opacity: 1;
+}
+
+.slide::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: #ef634a;
+  cursor: pointer;
+}
